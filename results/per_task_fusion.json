@@ -9,7 +9,8 @@
   "norm": "z",
   "mcmr_models": [
     "wemm",
-    "q8b"
+    "q8b",
+    "ovis"
   ],
   "per_dataset": {
     "ImageNet-1K": {
@@ -772,16 +773,18 @@
       "n": 3997,
       "w_used": [
         [
-          0.6,
-          0.4
+          0.7,
+          0.2,
+          0.1
         ],
         [
-          0.8,
-          0.2
+          0.7,
+          0.2,
+          0.1
         ]
       ],
       "single_model": 0.5364,
-      "fused": 0.5382
+      "fused": 0.5447
     }
   }
 }

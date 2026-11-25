@@ -56,7 +56,7 @@ MCMR fusion: ~20 min and ~15 GB of RAM because the score matrices are 3,997 × 1
   the half-split protocol is what keeps the reported number honest (each query is scored
   out-of-sample), but it is still test-set usage, and the leaderboard entry is marked
   self-reported accordingly.
-* MCMR used two of the five models.
+* MCMR used three of the five models (WeMM-9B, Qwen3-VL-Embedding-8B, Ovis-9B).
 * `I-RET` is the weakest column relative to the public state of the art (FashionIQ, Country211 and
   ChartQA are the three tasks where the strongest public entries are closed-weight models we cannot
   include).

@@ -4,9 +4,9 @@
     "model_size": "35",
     "model_backbone": "Qwen3-VL-Embedding-8B + Ovis-VL-Embedding-9B + Qwen3-VL-Embedding-2B + e5-omni-7B + WeMM-Embedding-9B (score-level late fusion)",
     "data_source": "Self-Reported",
-    "model_release_date": "2026-11-25",
+    "model_release_date": "2026-11-26",
     "url": "https://github.com/wangsheng1991/mmeb-image-fusion",
-    "report_generated_date": "2026-11-26T00:29:52.667974"
+    "report_generated_date": "2026-11-26T07:51:22.904610"
   },
   "metrics": {
     "image": {
@@ -119,7 +119,7 @@
         "hit@1": 0.99
       },
       "MCMR": {
-        "hit@1": 0.538154
+        "hit@1": 0.544658
       }
     }
   }

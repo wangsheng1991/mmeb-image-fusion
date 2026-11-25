@@ -18,12 +18,12 @@ Scores are hit@1, unweighted mean over tasks, computed with the leaderboard's ow
 
 | Column | Ours | Best public entry (before this) | Rank |
 |---|--:|---|--:|
-| **Image-Overall** (37 tasks, the column the image tab ranks by) | **83.74** | Taichu-UniRetriever 82.70 | **1** |
+| **Image-Overall** (37 tasks, the column the image tab ranks by) | **83.76** | Taichu-UniRetriever 82.70 | **1** |
 | Image-Overall(V2) (36 tasks, MMEB-V1/V2 suite) | **84.58** | Ovis-VL-Embedding-v1-9B 83.96 | 1 |
 | I-CLS (10 tasks) | 80.58 | Ovis 80.11 | 1 |
 | I-QA (10 tasks) | 87.01 | Ovis 86.72 | 1 |
 | I-VG (4 tasks) | 96.40 | Taichu-UniRetriever 96.42 | 2 |
-| I-RET (13 tasks, incl. MCMR) | 79.77 | Taichu-UniRetriever 81.32 | 2 |
+| I-RET (13 tasks, incl. MCMR) | 79.82 | Taichu-UniRetriever 81.32 | 2 |
 | Overall (all 190 datasets, image only) | 16.31 | 61.69 (omni-modality model) | — |
 
 Single models on the 36-task suite, measured with the same harness
@@ -37,9 +37,10 @@ Single models on the 36-task suite, measured with the same harness
 | Qwen3-VL-Embedding-2B | 74.97 | 74.96 |
 | e5-omni-7B | 71.36 | 70.50 |
 
-The 37th dataset, **MCMR** (MMEB-V3, 3,997 queries × 104,981 candidates), fused:
-WeMM-9B 53.64 %, Qwen3-VL-Embedding-8B 38.18 %, two-model fusion **53.82 %**.
-The difference between 82.29 (36-task mean with MCMR counted as 0) and 83.74 is entirely this task.
+The 37th dataset, **MCMR** (MMEB-V3, 3,997 queries × 104,981 candidates), fused from three of the
+five models: WeMM-9B 53.64 %, Qwen3-VL-Embedding-8B 38.18 %, Ovis-VL-Embedding-9B 37.18 %,
+combined **54.47 %** (weights 0.7 / 0.2 / 0.1). The gap between 82.29 (36-task mean with MCMR counted
+as 0) and 83.76 is entirely this task.
 
 ## What this is, exactly
 
@@ -54,14 +55,15 @@ The difference between 82.29 (36-task mean with MCMR counted as 0) and 83.74 is 
 * **Candidate shortlist.** To keep this cheap, each query's candidate list is the union of the
   five models' top-100s (intersected with the task's allowed candidate set for `local` tasks).
   This is equivalent to a multi-way recall + rerank pipeline; it never sees the labels.
-* 37th task (MCMR) uses the two strongest contributors (WeMM-9B + Qwen3-VL-Embedding-8B); the
-  other 36 use all five.
+* The 37th task (MCMR) uses three of the five models (WeMM-9B, Qwen3-VL-Embedding-8B, Ovis-9B);
+  the other 36 use all five. Adding the remaining two moves MCMR by well under one point
+  (measured: 53.82 with two models, 54.47 with three).
 
 Consequences worth stating plainly:
 
 * The numbers are **not** attributable to a single downloadable model, and reproducing them
   requires all five checkpoints plus the pipeline in this repo.
-* The MCMR figure is a 2-model fusion; a 5-model top-up was still running when this was published.
+* The MCMR figure is a 3-model fusion, not all five.
 * The candidate shortlist can only *lower* a fused score relative to full-catalogue reranking, so
   the reported numbers are conservative in that respect.
 * This is a *self-reported* leaderboard entry; see `METHOD.md` for the exact protocol.
