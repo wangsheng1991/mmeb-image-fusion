@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "model_name": "MMEB-Image-Fusion (5 models)",
+    "model_size": "35",
+    "model_backbone": "Qwen3-VL-Embedding-8B + Ovis-VL-Embedding-9B + Qwen3-VL-Embedding-2B + e5-omni-7B + WeMM-Embedding-9B (score-level late fusion)",
+    "data_source": "Self-Reported",
+    "model_release_date": "2026-11-25",
+    "url": "https://github.com/wangsheng1991/mmeb-image-fusion",
+    "report_generated_date": "2026-11-26T00:29:52.667974"
+  },
+  "metrics": {
+    "image": {
+      "ImageNet-1K": {
+        "hit@1": 0.862
+      },
+      "N24News": {
+        "hit@1": 0.835
+      },
+      "HatefulMemes": {
+        "hit@1": 0.782
+      },
+      "VOC2007": {
+        "hit@1": 0.956
+      },
+      "SUN397": {
+        "hit@1": 0.856
+      },
+      "Place365": {
+        "hit@1": 0.531
+      },
+      "ImageNet-A": {
+        "hit@1": 0.973
+      },
+      "ImageNet-R": {
+        "hit@1": 0.987
+      },
+      "ObjectNet": {
+        "hit@1": 0.885
+      },
+      "Country211": {
+        "hit@1": 0.391
+      },
+      "OK-VQA": {
+        "hit@1": 0.807
+      },
+      "A-OKVQA": {
+        "hit@1": 0.987
+      },
+      "DocVQA": {
+        "hit@1": 0.978
+      },
+      "InfographicsVQA": {
+        "hit@1": 0.909
+      },
+      "ChartQA": {
+        "hit@1": 0.821
+      },
+      "Visual7W": {
+        "hit@1": 0.721
+      },
+      "ScienceQA": {
+        "hit@1": 0.847
+      },
+      "VizWiz": {
+        "hit@1": 0.708
+      },
+      "GQA": {
+        "hit@1": 0.956
+      },
+      "TextVQA": {
+        "hit@1": 0.967
+      },
+      "VisDial": {
+        "hit@1": 0.9
+      },
+      "CIRR": {
+        "hit@1": 0.745
+      },
+      "VisualNews_t2i": {
+        "hit@1": 0.847
+      },
+      "VisualNews_i2t": {
+        "hit@1": 0.883
+      },
+      "MSCOCO_t2i": {
+        "hit@1": 0.816
+      },
+      "MSCOCO_i2t": {
+        "hit@1": 0.813
+      },
+      "NIGHTS": {
+        "hit@1": 0.721
+      },
+      "WebQA": {
+        "hit@1": 0.913
+      },
+      "FashionIQ": {
+        "hit@1": 0.479
+      },
+      "Wiki-SS-NQ": {
+        "hit@1": 0.911
+      },
+      "OVEN": {
+        "hit@1": 0.84
+      },
+      "EDIS": {
+        "hit@1": 0.964
+      },
+      "MSCOCO": {
+        "hit@1": 0.921
+      },
+      "RefCOCO": {
+        "hit@1": 0.985
+      },
+      "RefCOCO-Matching": {
+        "hit@1": 0.96
+      },
+      "Visual7W-Pointing": {
+        "hit@1": 0.99
+      },
+      "MCMR": {
+        "hit@1": 0.538154
+      }
+    }
+  }
+}

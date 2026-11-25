@@ -1,0 +1,4 @@
+# Fusion + reporting only (the evaluation itself needs the upstream VLM2Vec environment:
+# torch, transformers, qwen-vl-utils, decord, ... see that repository).
+numpy>=1.24
+pyyaml>=6.0

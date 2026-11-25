@@ -1,0 +1,13 @@
+# MCMR (MMEB-V3-only image retrieval task, the 37th dataset of the Image-Overall column).
+# Data layout expected under --data_basedir:
+#   image-tasks/MCMR/query.jsonl, candidates.jsonl, images/
+# 3,997 queries x 104,981 candidates, global retrieval, metric hit@1.
+MCMR:
+  dataset_parser: mcmr
+  dataset_name: MCMR
+  subset_name: MCMR
+  query_file: image-tasks/MCMR/query.jsonl
+  candidate_file: image-tasks/MCMR/candidates.jsonl
+  image_root: image-tasks/MCMR/images
+  query_instruction: Find an image-text pair that matches the given query
+  eval_type: global
